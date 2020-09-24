@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- Bootstrap core CSS -->
+    <link href='{% static "vendor/bootstrap/css/bootstrap.min.css"%}' rel="stylesheet">
+
+    <!-- Custom fonts for this template -->
+    <link href="https://fonts.googleapis.com/css?family=Raleway:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Lora:400,400i,700,700i" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href='{% static "pet.css" %}' rel="stylesheet">
+</head>
+<body>
+    <div class="for_center">
+        <h1>반려동물 입양</h1>
+        <strong>반려동물을 키우며 비언어적 교류를 하는 것은 심리 건강에 큰 도움이 됩니다. 
+            정서적 안정과 행복을 가져다 줄 유기견, 유기묘를 입양하여 키워보는 건 어떠실까요? </strong>
+        <br/>
+        <div class="main_box">
+            {% for line in PetList %}
+            <div class="pet">
+                <div><img src="{{line.imgurl}}"/></div>
+                <div>공고 번호 : {{line.number}}</div>
+                <div>품종 : {{line.kind}}</div>
+                <div>성별 : {{line.sex}}</div>
+                <div>특징 : {{line.feature}}</div>
+                <div>발견 장소 : {{line.area}}</div>
+            </div>
+            </br/>
+            {% endfor %}
+        </div>
+    </div>
+</body>
+</html>
