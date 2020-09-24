@@ -27,5 +27,9 @@ urlpatterns = [
     path('walk', views.walk, name='walk'),
     path('pet', views.pet, name='pet'),
     path('counseling_center', views.counseling_center, name='counseling_center'),
+    path('index/', views.index, name='index'),
+    path('about', views.about, name='about'),
+    path('products', views.products, name='products'),
+    path('store', views.store, name='store'),
 
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
