@@ -24,12 +24,8 @@ urlpatterns = [
     path('', views.home, name='home'),
     path('result', views.result, name='result'),
     path('book', views.book, name='book'),
-    path('walk', views.walk, name='walk'),
+    path('walk/<int:category>', views.walk, name='walk'),
     path('pet', views.pet, name='pet'),
-    path('counseling_center', views.counseling_center, name='counseling_center'),
-    path('index/', views.index, name='index'),
-    path('about', views.about, name='about'),
     path('products', views.products, name='products'),
-    path('store', views.store, name='store'),
 
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

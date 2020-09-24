@@ -15,8 +15,16 @@
     <link href='{% static "book.css" %}' rel="stylesheet">
 </head>
 <body>
-    <div class="for_center">
-        <h1>독서</h1>
+    <h1>당신을 위한 도서 추천</h1>
+    <br/>
+    <div class="main_box">
+        {% for line in BookList %}
+        <div class="book">
+            <div><a href={{line.url }}><strong>{{line.title}}</strong></a></div>
+            <div>저자- {{line.author}}</div>
+        </div>
+        <br/>
+        {% endfor %}
     </div>
 </body>
 </html>

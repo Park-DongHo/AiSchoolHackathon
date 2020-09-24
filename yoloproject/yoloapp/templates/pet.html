@@ -17,7 +17,23 @@
 </head>
 <body>
     <div class="for_center">
-        <h1>애완동물</h1>
+        <h1>반려동물 입양</h1>
+        <strong>반려동물을 키우며 비언어적 교류를 하는 것은 심리 건강에 큰 도움이 됩니다. 
+            정서적 안정과 행복을 가져다 줄 유기견, 유기묘를 입양하여 키워보는 건 어떠실까요? </strong>
+        <br/>
+        <div class="main_box">
+            {% for line in PetList %}
+            <div class="pet">
+                <div><img src="{{line.imgurl}}"/></div>
+                <div>공고 번호 : {{line.number}}</div>
+                <div>품종 : {{line.kind}}</div>
+                <div>성별 : {{line.sex}}</div>
+                <div>특징 : {{line.feature}}</div>
+                <div>발견 장소 : {{line.area}}</div>
+            </div>
+            </br/>
+            {% endfor %}
+        </div>
     </div>
 </body>
 </html>

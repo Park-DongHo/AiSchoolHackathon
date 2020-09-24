@@ -28,3 +28,10 @@ class PetList(models.Model):
 
     def __str__(self):
         return self.number
+
+class Walk(models.Model):
+    name = models.CharField(max_length=20)
+    category = models.CharField(max_length=10)
+    adress = models.CharField(max_length=20)
+    up = models.FloatField()
+    down = models.FloatField()
